@@ -3,7 +3,7 @@
 [Heroku link will go here]
 
 [Trello][trello]
-[trello]: https://trello.com/b/ALgfuX0Q/freshernote
+[trello]: https://trello.com/b/F9l46E8o/bartr
 
 ## Minimum Viable Product
 
