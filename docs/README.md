@@ -34,7 +34,23 @@ Bartr is a web application inspired by Etsy and built using Ruby on Rails and Re
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
 **Objective:** Functioning rails project with front-end Authentication
 
-###
+### Phase 2: Products and Search  (4 days)
+
+**Objective:** Products can be created, searched, and destroyed through
+the API.
+
+### Phase 3: Cart (2 day)
+
+**Objective:** Cart can be filled with products
+
+### Phase 4: Comments (1 days)
+
+**Objective:** Comments are added to products
+
+### Phase 5: Styling and fixing issues (2 days)
+
+**objective:** Work on styling
+
 
 
 ### Bonus Features (TBD)
