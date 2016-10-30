@@ -40,3 +40,4 @@ Bartr is a web application inspired by Etsy and built using Ruby on Rails and Re
 ### Bonus Features (TBD)
 - [ ] Favorites
 - [ ] Categories
+- [ ] Add Item
