@@ -1,8 +1,8 @@
 # Bartr
 
 [Heroku link will go here]
-
 [Trello][trello]
+
 [trello]: https://trello.com/b/F9l46E8o/bartr
 
 ## Minimum Viable Product
@@ -10,7 +10,7 @@
 Bartr is a web application inspired by Etsy and built using Ruby on Rails and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling :
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Production Listings
+- [ ] Product Listings
 - [ ] Shopping Cart
 - [ ] Comments / Reviews
 - [ ] Search
@@ -32,6 +32,11 @@ Bartr is a web application inspired by Etsy and built using Ruby on Rails and Re
 ## Implementation Timeline
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
-**Objective:** Fucntioning rails project with front-end Authentication
+**Objective:** Functioning rails project with front-end Authentication
 
 ###
+
+
+### Bonus Features (TBD)
+- [ ] Favorites
+- [ ] Categories
