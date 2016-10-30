@@ -1,3 +1,4 @@
+```js
 {
   currentUser: {
     id: 1,
@@ -11,7 +12,7 @@
   items: {
     1: {
       id: 1,
-      image: ???,
+      image_url: ???,
       name: "lamp",
       description: "old lamp",
       seller_id: 1,
@@ -30,7 +31,7 @@
   },
   currentListing: {
     id: 4,
-    image: ????,
+    image_url: ????,
     name: "lamp",
     description: "old lamp",
     seller_id: 1,
@@ -48,8 +49,8 @@
   },
 
   comments: {
+    id: 1
     commenter_id: 9,
-    commenter_image: url????,
     seller_id: 1,
     item_id: 3,
     rating: 4,
@@ -60,6 +61,7 @@
   cart: [
   {
     item_id: 1,
+    image_url: "???"
     price: 2.99,
   }
   ],
@@ -69,3 +71,4 @@
 
 
 }
+```
