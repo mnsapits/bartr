@@ -1,23 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
+import Greeting from './greeting';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign up!</Link>
-  </nav>
-);
+const mapStateToProps = ({ session }) => ({
+  currentUser: session.currentUser
+});
 
-const personalGreeting = (currentUser, logout) => (
-  <hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
-);
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+});
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
-
-export default Greeting;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Greeting);
