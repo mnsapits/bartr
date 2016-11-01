@@ -17,7 +17,6 @@
 
 - `POST /api/session`
 - `DELETE /api/session`
-- `GET /api/session`
 
 ### Products
 
@@ -27,13 +26,8 @@
 - `PATCH /api/products/:id`
 - `DELETE /api/products/:id`
 
-### Cart
+### Carts
 
-- `GET /api/cart`
-- `PATCH /api/cart`
-
-### Comments
-
-- `GET /api/comments`
-- `POST /api/comments`
-- `DELETE /api/comments/:id`
+- `GET /api/carts`
+- `POST /api/carts`
+- `DELETE /api/carts`
