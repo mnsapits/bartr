@@ -2,66 +2,61 @@
 {
   currentUser: {
     id: 1,
-    username: "mnsapits"
+    username: "mnsapits",
+    avatar: "urlstring"
   },
   forms: {
    signUp: {errors: []},
    logIn: {errors: []},
+   addItem: {errors: []}
   },
 
   items: {
     1: {
       id: 1,
-      image_url: ???,
+      image_url: "imageurl",
       name: "lamp",
+      location: "California",
       description: "old lamp",
       seller_id: 1,
-      hobby_tag: 1,
-      price: 2.99,
-      comments: {
-        commenter_id: 9,
-        commenter_image: url????,
-        seller_id: 1,
-        item_id: 3,
-        rating: 4,
-        body: "great product",
-        date: 2016-1-1
-      }
+      price: 2.99
     }
   },
   currentListing: {
-    id: 4,
-    image_url: ????,
+    id: 1,
+    image_url: "imageurl",
     name: "lamp",
+    location: "California",
     description: "old lamp",
     seller_id: 1,
-    hobby_tag: 1,
     price: 2.99,
-    comments: {
-      commenter_id: 9,
-      commenter_image: url????,
-      seller_id: 1,
-      item_id: 3,
-      rating: 4,
-      body: "great product",
-      date: 2016-1-1
-    }  
+    sellers_store: {
+      1: {
+        id: 2,
+        image_url: "imageurl",
+        name: "lampshade",
+        location: "California",
+        description: "old lampshade",
+        seller_id: 1,
+        price: 1.99
+      }
+      2: {
+        id: 3,
+        image_url: "imageurl",
+        name: "lamp light",
+        location: "California",
+        description: "old lamp light",
+        seller_id: 1,
+        price: 0.99
+      }
+    }
   },
 
-  comments: {
-    id: 1
-    commenter_id: 9,
-    seller_id: 1,
-    item_id: 3,
-    rating: 4,
-    body: "great product",
-    date: 2016-1-1
-  },
 
   cart: [
   {
     item_id: 1,
-    image_url: "???"
+    image_url: "imageurl"
     price: 2.99,
   }
   ],
