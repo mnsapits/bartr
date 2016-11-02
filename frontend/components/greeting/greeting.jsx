@@ -3,10 +3,10 @@ import { Link } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from './../session_form/session_form_container';
 
-const sessionLinks = (openModal) => (
+const sessionLinks = (onLoginClick, onSignUpClick) => (
   <nav className="login-signup">
-    <button className="session-button" onClick={openModal}>Sign In</button>
-    <button className="session-button" onClick={openModal}>Sign Up</button>
+    <button className="session-button" onClick={onLoginClick}>Sign In</button>
+    <button className="session-button" onClick={onSignUpClick}>Sign Up</button>
   </nav>
 );
 const capitalizeFirstLetter = (string) => (
@@ -24,8 +24,34 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = { modalShown: false, formType: "login" };
+    this.onSignUpClick = this.onSignUpClick.bind(this);
+    this.onLoginClick = this.onLoginClick.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors.length === 0) {
+      this.closeModal();
+    }
+  }
+
+  onSignUpClick () {
+    this.openModal();
+    this.formTypeSignUp();
+  }
+
+  onLoginClick () {
+    this.openModal();
+    this.formTypeLogin();
+  }
+
+  formTypeLogin() {
+    this.setState({ formType: "login" });
+  }
+
+  formTypeSignUp() {
+    this.setState({ formType: "signup" });
   }
 
   componentWillMount() {
@@ -44,11 +70,13 @@ class Greeting extends React.Component {
     const {currentUser, logout} = this.props;
     return (
     <div>
-      {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.openModal)}
+      {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.onLoginClick, this.onSignUpClick)}
       <Modal
         isOpen={this.state.modalShown}
         onRequestClose={this.closeModal}>
-        <SessionFormContainer formType={this.state.formType}/>
+        <SessionFormContainer
+          closeModal={this.closeModal}
+          formType={this.state.formType}/>
       </Modal>
     </div>
   );}
