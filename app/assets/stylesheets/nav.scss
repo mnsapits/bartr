@@ -41,13 +41,20 @@ header {
     color: rgb(61,144,184);
     margin: 0;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
   }
 }
 
-.header-button {
-  color: rgb(61,144,184) !important;
-  text-transform: none;
+.session-button {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  padding: 5px 5px 5px 10px;
+  color: rgb(61,144,184);
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
 .header-name {

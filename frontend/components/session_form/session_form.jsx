@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
                   className="login-input" />
               </label>
               <br/>
-              <input type="submit" value="Submit" />
+              <input className="session-button" type="submit" value="Submit" />
             </div>
           </form>
         </div>
