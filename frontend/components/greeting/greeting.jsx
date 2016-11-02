@@ -72,6 +72,7 @@ class Greeting extends React.Component {
     <div>
       {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.onLoginClick, this.onSignUpClick)}
       <Modal
+        className="session-modal"
         isOpen={this.state.modalShown}
         onRequestClose={this.closeModal}>
         <SessionFormContainer
