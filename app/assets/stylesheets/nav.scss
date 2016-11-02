@@ -1,0 +1,56 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+.left-nav {
+  float: left;
+  h1 {
+    font-family: "Georgia";
+    color: rgb(260,100,0);
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.right-nav {
+  margin-top: 9px;
+  float: right;
+  a{
+    padding: 5px 0px 5px 10px;
+    color: rgb(61,144,184);
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+header {
+  padding: 20px 90px;
+  border-bottom: 1px solid grey;
+  a {
+    text-decoration: none;
+  }
+}
+
+.header-group {
+  h2 {
+    color: rgb(61,144,184);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+.header-button {
+  color: rgb(61,144,184) !important;
+  text-transform: none;
+}
+
+.header-name {
+  padding: 5px;
+  float: right;
+}
