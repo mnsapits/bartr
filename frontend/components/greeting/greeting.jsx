@@ -3,8 +3,9 @@ import { Link } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from './../session_form/session_form_container';
 
-const sessionLinks = (onLoginClick, onSignUpClick) => (
+const sessionLinks = (guestLogIn, onLoginClick, onSignUpClick) => (
   <nav className="login-signup">
+    <button className="session-button" onClick={guestLogIn}>Guest Log In</button>
     <button className="session-button" onClick={onLoginClick}>Sign In</button>
     <button className="session-button" onClick={onSignUpClick}>Sign Up</button>
   </nav>
@@ -23,17 +24,23 @@ const personalGreeting = (currentUser, logout) => (
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.login = props.login;
     this.state = { modalShown: false, formType: "login" };
     this.onSignUpClick = this.onSignUpClick.bind(this);
     this.onLoginClick = this.onLoginClick.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.guestLogIn = this.guestLogIn.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.errors.length === 0) {
       this.closeModal();
     }
+  }
+  guestLogIn() {
+    let user = {user: {username: "guest", password:123456}};
+    this.login(user);
   }
 
   onSignUpClick () {
@@ -70,7 +77,7 @@ class Greeting extends React.Component {
     const {currentUser, logout} = this.props;
     return (
     <div>
-      {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.onLoginClick, this.onSignUpClick)}
+      {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.guestLogIn, this.onLoginClick, this.onSignUpClick)}
       <Modal
         className="session-modal"
         isOpen={this.state.modalShown}
