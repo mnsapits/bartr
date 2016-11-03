@@ -29,11 +29,8 @@ class Api::ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    if @product.destroy
-      render :show
-    else
-      render json: @product.errors.full_messages, status: 422
-    end
+    @product.destroy
+    render :show
   end
 
   def product_params
