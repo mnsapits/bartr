@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from './../session_form/session_form_container';
+import NewProductFormContainer from '../products/new_product_form_container';
 
 const sessionLinks = (guestLogIn, onLoginClick, onSignUpClick) => (
   <nav className="login-signup">
@@ -17,6 +18,7 @@ const capitalizeFirstLetter = (string) => (
 
 const personalGreeting = (currentUser, logout) => (
   <hgroup className="header-group">
+    <NewProductFormContainer />
     <h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
     <button className="session-button" onClick={logout}>Log Out</button>
   </hgroup>
@@ -81,6 +83,8 @@ class Greeting extends React.Component {
       hashHistory.push(url);
     };
   }
+
+
 
   render() {
     const {currentUser, logout} = this.props;

@@ -1,5 +1,9 @@
 .greeting-nav {
   float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 5px;
 }
 
 
@@ -32,7 +36,7 @@
 }
 
 header {
-  padding: 20px 90px;
+  padding: 10px 90px;
   border-bottom: 1px solid grey;
   a {
     text-decoration: none;

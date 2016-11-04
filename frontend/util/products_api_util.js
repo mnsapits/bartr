@@ -5,3 +5,13 @@ export const requestProducts = (success) => {
     success
   });
 };
+
+export const addProduct = (product, success, error) => {
+  $.ajax({
+    method: 'POST',
+    url: '/api/products',
+    data: {product},
+    success,
+    error
+  });
+};
