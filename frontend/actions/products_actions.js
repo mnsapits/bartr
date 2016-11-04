@@ -2,7 +2,7 @@ export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_NEW_PRODUCT = 'RECEIVE_PRODUCT';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
-export const RECIEVE_PRODUCT_ERRORS = 'RECIEVE_PRODUCT_ERRORS';
+export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 
 export const requestProducts = () => ({
   type: REQUEST_PRODUCTS
@@ -24,6 +24,6 @@ export const receiveNewProduct = product => ({
 });
 
 export const receiveProductErrors = errors => ({
-  type: RECIEVE_PRODUCT_ERRORS,
+  type: RECEIVE_PRODUCT_ERRORS,
   errors
 });

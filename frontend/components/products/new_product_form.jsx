@@ -37,9 +37,8 @@ class NewProductForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
-    const product = this.state;
-    this.props.addProduct({product});
+      const product = this.state;
+    this.props.addProduct(product);
   }
 
   renderErrors() {
@@ -55,7 +54,6 @@ class NewProductForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <button
