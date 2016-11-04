@@ -9,6 +9,7 @@ import {
 
 const ProductsMiddleware = ({getState, dispatch}) => next => action => {
   let receiveProductsSuccess = (data) => dispatch(receiveProducts(data));
+
   switch(action.type) {
     case REQUEST_PRODUCTS:
       requestProducts(receiveProductsSuccess);

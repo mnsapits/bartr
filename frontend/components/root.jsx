@@ -3,7 +3,9 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
-import ProductDetail from './products/product_detail';
+import ProductIndex from './products/product_index';
+import ProductsIndexContainer from './products/products_index_container';
+import { requestProducts } from '../actions/products_actions';
 
 const Root = ({ store }) => {
 
@@ -21,10 +23,15 @@ const Root = ({ store }) => {
     }
   };
 
+  const requestAllProductsOnEnter = () => {
+    store.dispatch(requestProducts());
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
+        <Route path="/" component={App} >
+          <Route path="/products" component={ProductsIndexContainer} onEnter={requestAllProductsOnEnter} />
         </Route>
       </Router>
     </Provider>

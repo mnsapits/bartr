@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from './../session_form/session_form_container';
 
@@ -10,6 +10,7 @@ const sessionLinks = (guestLogIn, onLoginClick, onSignUpClick) => (
     <button className="session-button" onClick={onSignUpClick}>Sign Up</button>
   </nav>
 );
+
 const capitalizeFirstLetter = (string) => (
   string.charAt(0).toUpperCase() + string.slice(1)
 );
@@ -24,6 +25,7 @@ const personalGreeting = (currentUser, logout) => (
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.router = props.router;
     this.login = props.login;
     this.state = { modalShown: false, formType: "login" };
     this.onSignUpClick = this.onSignUpClick.bind(this);
@@ -73,10 +75,18 @@ class Greeting extends React.Component {
     this.setState({modalShown: false});
   }
 
+  pushToProducts(url) {
+    return (e) => {
+      e.preventDefault();
+      hashHistory.push(url);
+    };
+  }
+
   render() {
     const {currentUser, logout} = this.props;
     return (
-    <div>
+    <div className="greeting-nav">
+        <button className="session-button" onClick={this.pushToProducts('/products').bind(this)}>All Products</button>
       {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.guestLogIn, this.onLoginClick, this.onSignUpClick)}
       <Modal
         className="session-modal"
