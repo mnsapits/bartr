@@ -16,6 +16,8 @@ class NewProductForm extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderNothing = this.renderNothing.bind(this);
+    this.renderModal = this.renderModal.bind(this);
   }
 
   componentWillMount() {
@@ -28,6 +30,7 @@ class NewProductForm extends React.Component {
 
   closeModal() {
     this.setState({modalShown: false});
+    this.props.clearProductErrors();
   }
 
   update(field) {
@@ -36,17 +39,16 @@ class NewProductForm extends React.Component {
     });
   }
 
-  componentWillReceiveProps(newProps) {
-    if (newProps.errors.length === 0) {
-      this.closeModal();
-    }
-  }
+  // componentWillReceiveProps(newProps) {
+  //   if (newProps.errors.length === 0) {
+  //     this.closeModal();
+  //   }
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
-    const product = merge({}, this.state);
-    delete product.modalShown;
-    this.props.addProduct(product);
+    this.props.clearProductErrors();
+    this.props.addProduct(this.state);
   }
 
   renderErrors() {
@@ -61,7 +63,27 @@ class NewProductForm extends React.Component {
     );
   }
 
+  renderNothing() {
+    return (
+      <div>
+        <button
+          className="new-product-button"
+          onClick={this.openModal}
+        >Add Product
+        </button>
+      </div>
+    );
+  }
+
   render() {
+    if (this.state.modalShown) {
+      return this.renderModal();
+    } else {
+      return this.renderNothing();
+    }
+  }
+
+  renderModal() {
     return (
       <div>
         <button
