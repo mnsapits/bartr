@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import merge from 'lodash/merge';
 
 class NewProductForm extends React.Component {
   constructor(props) {
@@ -35,9 +36,16 @@ class NewProductForm extends React.Component {
     });
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors.length === 0) {
+      this.closeModal();
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-      const product = this.state;
+    const product = merge({}, this.state);
+    delete product.modalShown;
     this.props.addProduct(product);
   }
 

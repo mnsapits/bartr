@@ -9,7 +9,7 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      render :show
+      render :add_product
     else
       render json: @product.errors.full_messages, status: 422
     end
