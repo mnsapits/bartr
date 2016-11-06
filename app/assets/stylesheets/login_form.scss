@@ -4,10 +4,14 @@ input:-webkit-autofill {
 .login-form-container {
   font-family: "Georgia";
   color: rgb(260,100,0);
+  ul {
+    list-style: none;
+    padding: 0px;
+  }
 
   .session-submit {
     padding: 7px;
-    background-color: #ff6400;
+    background-color: rgb(260,100,0);
     font-weight: 500;
     color: white;
     border: none;

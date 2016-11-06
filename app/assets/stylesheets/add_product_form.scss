@@ -1,0 +1,36 @@
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.new-product-form {
+  font-family: "Georgia";
+  display: flex;
+  flex-direction: column;
+  h3{
+    padding: 0px;
+    margin: 0px;
+  }
+  ul {
+    list-style: none;
+    padding: 0px;
+  }
+  label{
+    display:inline-block;
+    padding: 0px 0px 5px 0px;
+  }
+  input{
+    display:block;
+    padding: 5px;
+  }
+  textarea{display:block;}
+}
+
+.add-product-submit {
+  padding: 7px;
+  background-color: rgb(260,100,0);
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}

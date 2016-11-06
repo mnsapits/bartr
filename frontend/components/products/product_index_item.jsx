@@ -1,16 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const ProductIndexItem = ({product}) => (
+const ProductIndexItem = ({product}) => {
+  return (
   <div
-    className="product-list-item">
-    <img style={{maxHeight: 100}}
-      className="product-list-image" src={product.image_url}/>
-    <div className="product-list-caption">
-      <p className="caption-header">{product.name}</p>
-      <p className="caption-seller">{product.seller_name}</p>
-      <p className="caption-price">{product.price}</p>
+    className="product-tile">
+    <div className="overlay"></div>
+    <Link to={"/products/"+ product.id} className="product-link-button">view</Link>
+    <div className="inner-wrap">
+      <img
+        className="product-img"
+        src={product.image_url}/>
+      <div className="product-meta">
+        <p className="product-title">{product.name}</p>
+        <p className="product-seller">Sold By: {product.seller_name}</p>
+        <p className="product-price">${product.price}</p>
+      </div>
     </div>
   </div>
 );
+};
 
 export default ProductIndexItem;

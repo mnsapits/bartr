@@ -12,8 +12,6 @@ const App = ({children, router}) => (
         <GreetingContainer router={router}/>
       </div>
     </header>
-    <div className="home-img">
-    </div>
     {children}
   </div>
 );

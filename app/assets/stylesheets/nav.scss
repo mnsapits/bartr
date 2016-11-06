@@ -37,10 +37,11 @@
 
 header {
   padding: 10px 90px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid lightgrey;
   a {
     text-decoration: none;
   }
+  position: relative;
 }
 
 .header-group {

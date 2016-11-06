@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-product1 = Product.create({seller_id: 1, name: 'Kombucha Kit', details: "Tasty kombucha", image_url: 'https://images-na.ssl-images-amazon.com/images/I/51Twrh-2zRL.jpg', price: 3, location: 'San Francisco'})
+product1 = Product.create({seller_id: 1, name: 'Kombucha Kit', details: "Tasty kombucha", image_url: 'http://res.cloudinary.com/dmdj7eggw/image/upload/v1478398346/products/51Twrh-2zRL.jpg', price: 3, location: 'San Francisco'})
 
 product2 = Product.create({seller_id: 1, name: 'Beer Kit', details: "Tasty beer", image_url: 'http://cdn.blessthisstuff.com/imagens/stuff/brooklyn-brew-beer-making-kit.jpg', price: 5, location: 'San Francisco'})
 

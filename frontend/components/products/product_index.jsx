@@ -6,7 +6,7 @@ const ProductIndex = ({products}) => {
     return <ProductIndexItem key={products[id].name + id} product={products[id]} />;
   });
   return (
-    <div className="product-list-items">
+    <div className="product-wrapper">
       {productIndexItems}
     </div>
   );

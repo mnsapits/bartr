@@ -29,6 +29,7 @@ class NewProductForm extends React.Component {
   }
 
   closeModal() {
+    this.props.clearProductErrors();
     this.setState({
     modalShown: false,
     name: "",
@@ -37,7 +38,6 @@ class NewProductForm extends React.Component {
     location: "",
     price: "",
     });
-    this.props.clearProductErrors();
   }
 
   update(field) {
@@ -117,12 +117,6 @@ class NewProductForm extends React.Component {
                 onChange={this.update("name")}
               />
             </label>
-            <label> Details
-              <textarea rows="4" cols="80"
-                value={this.state.details}
-                onChange={this.update("details")}
-              ></textarea>
-            </label>
             <label> Price
               <input
                 type="text"
@@ -144,7 +138,13 @@ class NewProductForm extends React.Component {
                 onChange={this.update("image_url")}
               />
             </label>
-            <input className="submit" type="submit" value="Submit" />
+            <label> Details
+              <textarea rows="4" cols="50"
+                value={this.state.details}
+                onChange={this.update("details")}
+                ></textarea>
+            </label>
+            <input className="add-product-submit" type="submit" value="Submit" />
           </form>
         </Modal>
       </div>
