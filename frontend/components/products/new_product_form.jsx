@@ -29,7 +29,14 @@ class NewProductForm extends React.Component {
   }
 
   closeModal() {
-    this.setState({modalShown: false});
+    this.setState({
+    modalShown: false,
+    name: "",
+    details: "",
+    image_url: "",
+    location: "",
+    price: "",
+    });
     this.props.clearProductErrors();
   }
 
@@ -39,11 +46,13 @@ class NewProductForm extends React.Component {
     });
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps.errors.length === 0) {
-  //     this.closeModal();
-  //   }
-  // }
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors.length > 0) {
+      this.setState({ modalShown: true });
+    } else {
+      this.setState({ modalShown: false });
+    }
+  }
 
   handleSubmit(e) {
     e.preventDefault();

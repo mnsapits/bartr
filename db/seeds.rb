@@ -13,3 +13,5 @@ product2 = Product.create({seller_id: 1, name: 'Beer Kit', details: "Tasty beer"
 product3 = Product.create({seller_id: 1, name: 'Cheese Kit', details: "Tasty cheese", image_url: 'https://cdn.prezzybox.com/Images/12018.jpg', price: 6, location: 'San Francisco'})
 
 product4 = Product.create({seller_id: 1, name: 'Water Kefir Kit', details: "Tasty Kefir", image_url: 'http://cdn.culturesforhealth.com/media/catalog/product/cache/1/thumbnail/960x/17f82f742ffe127f42dca9de82fb58b1/c/f/cfh_waterkefirgrains_starterculture_highres_front.jpg', price: 7, location: 'San Francisco'})
+
+guest = User.create({username: "guest", password: 123456})

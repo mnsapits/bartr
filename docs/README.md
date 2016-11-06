@@ -1,6 +1,6 @@
 # Bartr
 
-[Heroku link will go here]
+[Heroku]
 
 [Trello][trello]
 
