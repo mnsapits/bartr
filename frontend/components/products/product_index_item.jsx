@@ -6,7 +6,7 @@ const ProductIndexItem = ({product}) => {
   <div
     className="product-tile">
     <div className="overlay"></div>
-    <Link to={"/products/"+ product.id} className="product-link-button">view</Link>
+    <Link to={"product/"+ product.id} className="product-link-button">view</Link>
     <div className="inner-wrap">
       <img
         className="product-img"

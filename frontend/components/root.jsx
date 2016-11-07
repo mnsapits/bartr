@@ -5,8 +5,9 @@ import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import ProductIndex from './products/product_index';
 import ProductsIndexContainer from './products/products_index_container';
-import { requestProducts } from '../actions/products_actions';
+import { requestProducts, requestProduct } from '../actions/products_actions';
 import UserDetailContainer from './users/user_detail_container';
+import ProductDetailContainer from './products/product_detail_container';
 
 const Root = ({ store }) => {
 
@@ -28,12 +29,16 @@ const Root = ({ store }) => {
     store.dispatch(requestProducts());
   };
 
+  const requestProductDetailOnEnter = (nextState) => {
+    store.dispatch(requestProduct(nextState.params.id));
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} >
-          <Route path="/products" component={ProductsIndexContainer} onEnter={requestAllProductsOnEnter} />
-          <Route path="/users/:username" component={UserDetailContainer} />
+          <Route path="products" component={ProductsIndexContainer} onEnter={requestAllProductsOnEnter}/>
+          <Route path="product/:id" component={ProductDetailContainer} onEnter={requestProductDetailOnEnter}/>
         </Route>
       </Router>
     </Provider>

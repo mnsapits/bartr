@@ -15,3 +15,11 @@ export const addProduct = (product, success, error) => {
     error
   });
 };
+
+export const requestProduct = (id, success) => {
+  $.ajax({
+    method: 'GET',
+    url: `/api/products/${id}`,
+    success
+  });
+};
