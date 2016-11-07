@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ProductDetail from './product_detail';
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = ({currentProduct}) => ({
+  currentProduct
 });
 
 const mapDispatchToProps = dispatch => ({

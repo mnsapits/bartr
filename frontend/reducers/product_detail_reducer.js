@@ -1,12 +1,14 @@
 import{ RECEIVE_PRODUCT } from '../actions/products_actions';
 
 const _currentProduct = {
-  seller_id: "",
+  id: "",
+  seller_name: "",
   name: "",
   details: "",
   image_url: "",
   price: "",
-  location: ""
+  location: "",
+  seller_store: []
 };
 
 const ProductDetailReducer = (state = _currentProduct, action) => {

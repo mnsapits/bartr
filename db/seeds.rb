@@ -14,4 +14,4 @@ product3 = Product.create({seller_id: 1, name: 'Cheese Kit', details: "Tasty che
 
 product4 = Product.create({seller_id: 1, name: 'Water Kefir Kit', details: "Tasty Kefir", image_url: 'http://cdn.culturesforhealth.com/media/catalog/product/cache/1/thumbnail/960x/17f82f742ffe127f42dca9de82fb58b1/c/f/cfh_waterkefirgrains_starterculture_highres_front.jpg', price: 7, location: 'San Francisco'})
 
-guest = User.create({username: "guest", password: 123456})
+guest = User.create({username: "guest", password: 123456, avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"})
