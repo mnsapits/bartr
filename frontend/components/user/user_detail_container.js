@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import UserDetail from './user_detail';
 
-const mapStateToProps = ({ router }) => ({
-  router
+const mapStateToProps = () => ({
+});
+
+const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   null
 )(UserDetail);

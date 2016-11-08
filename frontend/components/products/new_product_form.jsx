@@ -50,13 +50,19 @@ class NewProductForm extends React.Component {
     if (newProps.errors.length > 0) {
       this.setState({ modalShown: true });
     } else {
-      this.setState({ modalShown: false });
+      this.setState({
+      modalShown: false,
+      name: "",
+      details: "",
+      image_url: "",
+      location: "",
+      price: "",
+      });
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.clearProductErrors();
     this.props.addProduct(this.state);
   }
 

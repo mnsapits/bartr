@@ -9,7 +9,7 @@ const ProductsReducer = (state = {}, action) => {
     case RECEIVE_NEW_PRODUCT:
       let newState = merge({}, state);
       let newProduct = action.product;
-      return merge(newState, {newProduct});
+      return merge(newState, {[newProduct.id]: newProduct});
     default:
       return state;
   }

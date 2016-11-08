@@ -8,13 +8,14 @@ const ErrorsReducer = (state = _defaultErrors, action) => {
   switch (action.type) {
     case RECEIVE_PRODUCT_ERRORS:
       let newState = merge({}, state);
-      return merge(newState, {productErrors: action.errors});
+      newState.productErrors = action.errors;
+      return newState;
     case CLEAR_PRODUCT_ERRORS:
       let newErrorState = merge({}, state);
       newErrorState.productErrors = [];
       return newErrorState;
     default:
-      return state;
+      return merge({}, state);
   }
 };
 

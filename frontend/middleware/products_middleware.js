@@ -14,9 +14,14 @@ import {
   addProduct
 } from '../util/products_api_util';
 
+import { hashHistory } from 'react-router';
+
 const ProductsMiddleware = ({getState, dispatch}) => next => action => {
   let receiveProductsSuccess = (data) => dispatch(receiveProducts(data));
-  let receiveNewProductSuccess = (data) => dispatch(receiveNewProduct(data));
+  let receiveNewProductSuccess = (data) => {
+    hashHistory.push(`product/${data.id}`);
+    dispatch(receiveNewProduct(data));
+  };
   let receiveProductSuccess = (data) => dispatch(receiveProduct(data));
   let productErrors = errors => {
     dispatch(receiveProductErrors(errors.responseJSON));
