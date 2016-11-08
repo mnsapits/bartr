@@ -3,7 +3,6 @@ import { withRouter } from 'react-router';
 import StoreItemDetail from '../products/store_item_detail';
 
 const UserStore = ({ currentStore }) => {
-  console.log(currentStore);
   let storeProducts = currentStore.products.map( product => (
     <StoreItemDetail
       key={product.id}

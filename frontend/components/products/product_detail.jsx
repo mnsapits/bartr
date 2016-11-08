@@ -7,6 +7,11 @@ class ProductDetail extends React.Component {
     super(props);
   }
 
+  componentWillUnmount(){
+    this.props.clearCurrentProduct();
+  }
+
+
   renderStore() {
     const sellerStore = this.props.currentProduct.seller_store;
 
@@ -14,7 +19,6 @@ class ProductDetail extends React.Component {
       sellerStore.map(product => {
         return <StoreItemDetail key={product.id} product={product} />;
       })
-
     );
   }
 
@@ -25,7 +29,6 @@ class ProductDetail extends React.Component {
     const currentProduct = this.props.currentProduct;
     const sellerStore = currentProduct.seller_store;
     const store = `\'s Store`;
-    console.log(this.props);
     return(
       <div className="product-container">
         <div className="product-detail">

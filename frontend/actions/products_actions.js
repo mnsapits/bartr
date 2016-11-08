@@ -6,6 +6,7 @@ export const RECEIVE_NEW_PRODUCT = 'RECEIVE_PRODUCT';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 export const CLEAR_PRODUCT_ERRORS = 'CLEAR_PRODUCT_ERRORS';
+export const CLEAR_CURRENT_PRODUCT = 'CLEAR_CURRENT_PRODUCT';
 
 export const requestProducts = () => ({
   type: REQUEST_PRODUCTS
@@ -43,4 +44,8 @@ export const receiveProductErrors = errors => ({
 
 export const clearProductErrors = () => ({
   type: CLEAR_PRODUCT_ERRORS
+});
+
+export const clearCurrentProduct = () => ({
+  type: CLEAR_CURRENT_PRODUCT
 });
