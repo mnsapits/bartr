@@ -7,7 +7,7 @@ import ProductIndex from './products/product_index';
 import ProductsIndexContainer from './products/products_index_container';
 import { requestProducts, requestProduct } from '../actions/products_actions';
 import { requestUserStore } from  '../actions/user_actions';
-import UserDetailContainer from './user/user_detail_container';
+import UserStoreContainer from './users/user_store_container';
 import ProductDetailContainer from './products/product_detail_container';
 
 const Root = ({ store }) => {
@@ -35,7 +35,7 @@ const Root = ({ store }) => {
   };
 
   const requestUserStoreOnEnter = (nextState) => {
-    store.dispatch(requestUserStore(nextState.params.id))
+    store.dispatch(requestUserStore(nextState.params.id));
   };
 
   return (
@@ -44,7 +44,7 @@ const Root = ({ store }) => {
         <Route path="/" component={App} >
           <Route path="products" component={ProductsIndexContainer} onEnter={requestAllProductsOnEnter}/>
           <Route path="product/:id" component={ProductDetailContainer} onEnter={requestProductDetailOnEnter}/>
-          <Route path="users/:id" component={UserDetailContainer} onEnter={requestUserStoreOnEnter}/>
+          <Route path="users/:id" component={UserStoreContainer} onEnter={requestUserStoreOnEnter}/>
         </Route>
       </Router>
     </Provider>

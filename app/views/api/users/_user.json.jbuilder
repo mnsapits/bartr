@@ -1,2 +1,2 @@
 json.extract! user, :id, :username
-json.currentStore user.products
+json.products user.products

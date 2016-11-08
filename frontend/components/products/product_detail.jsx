@@ -1,5 +1,6 @@
 import React from 'react';
 import StoreItemDetail from './store_item_detail';
+import { Link } from 'react-router';
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class ProductDetail extends React.Component {
     const currentProduct = this.props.currentProduct;
     const sellerStore = currentProduct.seller_store;
     const store = `\'s Store`;
+    console.log(this.props);
     return(
       <div className="product-container">
         <div className="product-detail">
@@ -47,7 +49,7 @@ class ProductDetail extends React.Component {
             </div>
 
             <aside className="seller-store">
-              <a className="store-name">{capitalizeFirstLetter(currentProduct.seller_name)}{store}</a>
+              <Link to={"users/" + currentProduct.seller_id} className="store-name">{capitalizeFirstLetter(currentProduct.seller_name)}{store}</Link>
               {this.renderStore()}
             </aside>
           </div>

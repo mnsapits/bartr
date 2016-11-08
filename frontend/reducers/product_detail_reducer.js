@@ -8,6 +8,7 @@ const _currentProduct = {
   image_url: "",
   price: "",
   location: "",
+  seller_id: "",
   seller_store: []
 };
 
