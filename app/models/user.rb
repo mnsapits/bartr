@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  avatar          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_reader :password
 
@@ -12,6 +25,11 @@ class User < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :seller_id,
   class_name: "Product"
+
+  has_many :cart_items,
+  primary_key: :id,
+  foreign_key: :buyer_id,
+  class_name: "Cart"
 
   def password= password
     self.password_digest = BCrypt::Password.create(password)

@@ -43,7 +43,7 @@ class Greeting extends React.Component {
     }
   }
   guestLogIn() {
-    let user = {user: {username: "guest", password:123456}};
+    let user = {user: {username: "Guest", password:123456}};
     this.login(user);
   }
 

@@ -7,7 +7,7 @@ class ProductDetail extends React.Component {
     super(props);
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.props.clearCurrentProduct();
   }
 
