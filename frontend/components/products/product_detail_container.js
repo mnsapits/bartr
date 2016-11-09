@@ -10,7 +10,7 @@ const mapDispatchToProps = dispatch => ({
   clearCurrentProduct: () => dispatch(clearCurrentProduct())
 });
 
-export default connect(
+export default connect (
   mapStateToProps,
   mapDispatchToProps
 )(ProductDetail);

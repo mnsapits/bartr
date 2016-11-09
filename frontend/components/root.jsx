@@ -1,14 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+
 import App from './app';
-import SessionFormContainer from './session_form/session_form_container';
+import Splash from './splash/splash';
 import ProductIndex from './products/product_index';
+import SessionFormContainer from './session_form/session_form_container';
 import ProductsIndexContainer from './products/products_index_container';
-import { requestProducts, requestProduct } from '../actions/products_actions';
-import { requestUserStore } from  '../actions/user_actions';
 import UserStoreContainer from './users/user_store_container';
 import ProductDetailContainer from './products/product_detail_container';
+import CartContainer from './cart/cart_container';
+import { requestProducts, requestProduct } from '../actions/products_actions';
+import { requestUserStore } from  '../actions/user_actions';
+import { requestCart } from '../actions/cart_actions';
 
 const Root = ({ store }) => {
 
@@ -42,9 +46,11 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} >
+          <IndexRoute component={Splash} />
           <Route path="products" component={ProductsIndexContainer} onEnter={requestAllProductsOnEnter}/>
           <Route path="product/:id" component={ProductDetailContainer} onEnter={requestProductDetailOnEnter}/>
           <Route path="users/:id" component={UserStoreContainer} onEnter={requestUserStoreOnEnter}/>
+          <Route path="cart" component={CartContainer} />
         </Route>
       </Router>
     </Provider>

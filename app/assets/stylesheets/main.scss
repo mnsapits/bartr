@@ -1,6 +1,21 @@
 html,body {
+  height: 100%;
   padding: 0;
   margin: 0;
   background: white;
   font-family: 'Karla', sans-serif;
+}
+
+.splash-page{
+  background-image: url('http://res.cloudinary.com/dmdj7eggw/image/upload/v1478649067/Jacksonville-Barter-Exchange-Trading_pe6irf.jpg');
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 80px);
+  p {
+    font-size: 22px;
+    padding-top: 40px;
+    left: 35%;
+    position: absolute;
+  }
 }
