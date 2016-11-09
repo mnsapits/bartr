@@ -4,6 +4,7 @@ import ProductsReducer from './products_reducer';
 import ProductDetailReducer from './product_detail_reducer';
 import ErrorsReducer from './errors_reducer';
 import CurrentStoreReducer from './current_store_reducer';
+import CartReducer from './cart_reducer';
 
 
 const RootReducer = combineReducers({
@@ -11,6 +12,7 @@ const RootReducer = combineReducers({
   products: ProductsReducer,
   currentProduct: ProductDetailReducer,
   currentStore: CurrentStoreReducer,
+  cart: CartReducer,
   errors: ErrorsReducer
 });
 

@@ -5,7 +5,7 @@ import {
   REQUEST_PRODUCTS,
   REQUEST_PRODUCT,
   ADD_PRODUCT,
-  receiveProductErrors,
+  receiveProductErrors
 } from '../actions/products_actions';
 
 import {
