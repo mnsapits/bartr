@@ -71,3 +71,12 @@ header {
   padding: 5px;
   float: right;
 }
+
+.shop-cart {
+  opacity: .7;
+  width: 30px;
+  &:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
+}

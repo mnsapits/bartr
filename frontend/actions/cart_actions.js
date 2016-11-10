@@ -24,9 +24,9 @@ export const receiveCartItem = (cartItem) => ({
   cartItem
 });
 
-export const destroyCartItem = (id) => ({
+export const destroyCartItem = (productId) => ({
   type: DESTROY_CART_ITEM,
-  id
+  productId
 });
 
 export const removeCartItem = (cartItem) => ({

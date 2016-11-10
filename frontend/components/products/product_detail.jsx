@@ -49,6 +49,7 @@ class ProductDetail extends React.Component {
               <h3>{currentProduct.name}</h3>
               <p>Ships worldwide from {currentProduct.location}</p>
               <p>${currentProduct.price}</p>
+              <button onClick={this.props.addCartItem(currentProduct.id)}>Add to cart</button>
             </div>
 
             <aside className="seller-store">

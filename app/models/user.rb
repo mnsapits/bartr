@@ -26,10 +26,14 @@ class User < ActiveRecord::Base
   foreign_key: :seller_id,
   class_name: "Product"
 
-  has_many :cart_items,
+  has_many :carts,
   primary_key: :id,
   foreign_key: :buyer_id,
   class_name: "Cart"
+
+  has_many :cart_items,
+  through: :carts,
+  source: :item
 
   def password= password
     self.password_digest = BCrypt::Password.create(password)

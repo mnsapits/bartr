@@ -17,7 +17,7 @@ class Cart < ApplicationRecord
   foreign_key: :buyer_id,
   class_name: "User"
 
-  has_many :items,
+  belongs_to :item,
   primary_key: :id,
   foreign_key: :product_id,
   class_name: "Product"

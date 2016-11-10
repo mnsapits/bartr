@@ -6,18 +6,18 @@ export const requestCart = (success) => {
   });
 };
 
-export const addCartItem = (cartItem, success) => {
+export const addCartItem = (productId, success) => {
   $.ajax({
     method: 'POST',
     url: `/api/carts`,
-    data: {cartItem},
+    data: {productId},
     success
   });
 };
 
-export const destroyCartItem = (id, success) => {
+export const destroyCartItem = (productId, success) => {
   $.ajax({
     method: 'DELETE',
-    url: `/api/carts/${id}`
+    url: `/api/carts/${productId}`
   });
 };

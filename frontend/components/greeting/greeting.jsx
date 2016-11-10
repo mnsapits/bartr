@@ -3,6 +3,7 @@ import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from './../session_form/session_form_container';
 import NewProductFormContainer from '../products/new_product_form_container';
+import CartIcon from '../cart/cart_icon';
 
 const sessionLinks = (guestLogIn, onLoginClick, onSignUpClick) => (
   <nav className="login-signup">
@@ -16,9 +17,10 @@ const capitalizeFirstLetter = (string) => (
   string.charAt(0).toUpperCase() + string.slice(1)
 );
 
-const personalGreeting = (currentUser, logout) => (
+const personalGreeting = (currentUser, logout, requestCart) => (
   <hgroup className="header-group">
     <NewProductFormContainer />
+    <CartIcon requestCart={requestCart}/>
     <h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
     <button className="session-button" onClick={logout}>Log Out</button>
   </hgroup>
@@ -87,11 +89,11 @@ class Greeting extends React.Component {
 
 
   render() {
-    const {currentUser, logout} = this.props;
+    const {currentUser, logout, requestCart} = this.props;
     return (
     <div className="greeting-nav">
         <button className="session-button" onClick={this.pushToProducts('/products').bind(this)}>All Products</button>
-      {currentUser ? personalGreeting(currentUser, logout) : sessionLinks(this.guestLogIn, this.onLoginClick, this.onSignUpClick)}
+      {currentUser ? personalGreeting(currentUser, logout, requestCart) : sessionLinks(this.guestLogIn, this.onLoginClick, this.onSignUpClick)}
       <Modal
         className="session-modal"
         isOpen={this.state.modalShown}

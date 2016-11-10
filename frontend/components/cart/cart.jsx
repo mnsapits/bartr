@@ -1,4 +1,5 @@
 import React from 'react';
+import CartItem from './cart_item';
 
 class Cart extends React.Component {
   constructor(props) {
@@ -6,13 +7,13 @@ class Cart extends React.Component {
   }
 
   render () {
-    return (
-    <div className="cart-container">
-      {this.props.cart.map( product => (
-      <CartItem product={product} />
-      ))}
-    </div>
-  );}
+      return (
+      <div className="shopping-cart">
+        {this.props.cart.map( product => (
+        <CartItem key={product.id} product={product} destroyCartItem={this.props.destroyCartItem} />
+        ))}
+      </div>
+    );}
 }
 
 export default Cart;

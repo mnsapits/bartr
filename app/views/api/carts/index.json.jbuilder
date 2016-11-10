@@ -1,5 +1,3 @@
-@cart.each do |cart_item|
-  json.set! cart_item.id do
-    json.extract! product, :id, :image_url, :name, :detail, :location, :price
-  end
+json.array! @cart do |cart_item|
+  json.merge! cart_item.attributes
 end
