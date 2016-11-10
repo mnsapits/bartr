@@ -1,16 +1,19 @@
 import {
+  receiveProductErrors,
   receiveProducts,
   receiveProduct,
   receiveNewProduct,
+  searchResults,
+  SEARCH_PRODUCTS,
   REQUEST_PRODUCTS,
   REQUEST_PRODUCT,
-  ADD_PRODUCT,
-  receiveProductErrors
+  ADD_PRODUCT
 } from '../actions/products_actions';
 
 import {
   requestProducts,
   requestProduct,
+  searchProducts,
   addProduct
 } from '../util/products_api_util';
 
@@ -26,6 +29,7 @@ const ProductsMiddleware = ({getState, dispatch}) => next => action => {
   let productErrors = errors => {
     dispatch(receiveProductErrors(errors.responseJSON));
   };
+  let receiveSearchResults = (data) => dispatch(searchResults(data));
 
   switch(action.type) {
     case REQUEST_PRODUCTS:
@@ -36,6 +40,10 @@ const ProductsMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case REQUEST_PRODUCT:
       requestProduct(action.id, receiveProductSuccess);
+      return next(action);
+    case SEARCH_PRODUCTS:
+      searchProducts(action.query, receiveSearchResults);
+      return next(action);
     default:
       return next(action);
   }

@@ -23,3 +23,12 @@ export const requestProduct = (id, success) => {
     success
   });
 };
+
+export const searchProducts = (query, success) => {
+  $.ajax({
+    method: 'GET',
+    url: '/api/products',
+    data: {query},
+    success
+  });
+};

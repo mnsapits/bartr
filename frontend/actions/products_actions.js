@@ -8,6 +8,19 @@ export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 export const CLEAR_PRODUCT_ERRORS = 'CLEAR_PRODUCT_ERRORS';
 export const CLEAR_CURRENT_PRODUCT = 'CLEAR_CURRENT_PRODUCT';
 
+export const SEARCH_PRODUCTS = 'SEARCH_PRODUCTS';
+export const SEARCH_RESULTS = 'SEARCH_RESULTS';
+
+export const searchProducts = (query) => ({
+  type: SEARCH_PRODUCTS,
+  query
+});
+
+export const searchResults = (products) => ({
+  type: SEARCH_RESULTS,
+  products
+});
+
 export const requestProducts = () => ({
   type: REQUEST_PRODUCTS
 });
