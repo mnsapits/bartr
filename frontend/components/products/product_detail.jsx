@@ -1,6 +1,22 @@
 import React from 'react';
 import StoreItemDetail from './store_item_detail';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
+import includes from 'lodash/includes';
+
+
+
+  const addToCartButton = (cart, currentUser, addCartItem, currentProduct) => {
+    debugger
+    const itemIds = cart.map( item => item.id);
+    if (includes(itemIds, currentProduct.id)){
+      return <button
+        className="in-cart-button">Item already in cart!</button>;
+      } else {
+      return <button
+        className="add-item-button"
+        onClick={addCartItem}>Add to cart</button>;
+    }
+  };
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -22,13 +38,27 @@ class ProductDetail extends React.Component {
     );
   }
 
+
   render() {
     const capitalizeFirstLetter = (string) => (
       string.charAt(0).toUpperCase() + string.slice(1)
     );
     const currentProduct = this.props.currentProduct;
     const sellerStore = currentProduct.seller_store;
-    const addCartItem = () => (this.props.addCartItem(currentProduct.id));
+    const cart = this.props.cart;
+    const currentUser = this.props.currentUser;
+
+    const addCartItem = () => {
+      if (this.props.currentUser === null) {
+        alert("Log In to use cart!");
+      } else if (currentProduct.seller_id === currentUser.id) {
+        alert("You can't purchase your own product");
+      } else {
+        this.props.addCartItem(currentProduct.id);
+        hashHistory.push('/cart');
+      }
+
+    };
     const store = `\'s Store`;
     return(
       <div className="product-container">
@@ -50,7 +80,7 @@ class ProductDetail extends React.Component {
               <h3>{currentProduct.name}</h3>
               <p>Ships worldwide from {currentProduct.location}</p>
               <p>${currentProduct.price}</p>
-              <button onClick={addCartItem}>Add to cart</button>
+              {addToCartButton(cart, currentUser, addCartItem, currentProduct)}
             </div>
 
             <aside className="seller-store">

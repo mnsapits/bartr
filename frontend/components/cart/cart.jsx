@@ -7,6 +7,8 @@ class Cart extends React.Component {
   }
 
   render () {
+    let theEnd = () => (alert("I won't take your money but I would appreciate an opportunity to interview!"));
+
   let subtotal = (this.props.cart.map(product => product.price).reduce((a, b) => a + b, 0)).toFixed(2);
   let tax = (subtotal * 0.05).toFixed(2);
   let grandtotal = (Number(subtotal) + Number(tax) + 15).toFixed(2);
@@ -26,7 +28,7 @@ class Cart extends React.Component {
         </div>
 
         {this.props.cart.map( product => (
-        <CartItem key={product.id} product={product} destroyCartItem={this.props.destroyCartItem} />
+        <CartItem key={product.name} product={product} destroyCartItem={this.props.destroyCartItem} />
         ))}
 
         <div className="totals">
@@ -48,7 +50,7 @@ class Cart extends React.Component {
           </div>
         </div>
 
-        <button className="checkout">Checkout</button>
+        <button onClick={theEnd}className="checkout">Checkout</button>
 
       </div>
     );

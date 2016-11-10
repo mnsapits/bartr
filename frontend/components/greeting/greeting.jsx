@@ -19,10 +19,14 @@ const capitalizeFirstLetter = (string) => (
 
 const personalGreeting = (currentUser, logout, requestCart) => (
   <hgroup className="header-group">
-    <NewProductFormContainer />
     <CartIcon requestCart={requestCart}/>
-    <h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
-    <button className="session-button" onClick={logout}>Log Out</button>
+    <nav>
+      <h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
+        <ul className="greeting-dropdown">
+          <li className="add-product-button"><NewProductFormContainer /></li>
+          <li className="logout-button"><button className="session-button" onClick={logout}>Log Out</button></li>
+        </ul>
+    </nav>
   </hgroup>
 );
 

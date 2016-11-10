@@ -3,8 +3,10 @@ import ProductDetail from './product_detail';
 import { clearCurrentProduct } from '../../actions/products_actions';
 import { addCartItem } from '../../actions/cart_actions';
 
-const mapStateToProps = ({currentProduct}) => ({
-  currentProduct
+const mapStateToProps = ({currentProduct, session, cart}) => ({
+  currentProduct,
+  cart,
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

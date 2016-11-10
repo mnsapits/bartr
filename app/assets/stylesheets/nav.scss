@@ -25,8 +25,19 @@
   }
 }
 
-.right-nav {
+.right-nav {  
   a{
+    list-style-type: none;
+    padding: 5px 0px 5px 10px;
+    color: rgb(61,144,184);
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .new-product-button {
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
     padding: 5px 0px 5px 10px;
     color: rgb(61,144,184);
     &:hover{
