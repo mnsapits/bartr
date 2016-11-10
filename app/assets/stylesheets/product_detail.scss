@@ -41,6 +41,23 @@
     p {
       margin: 5px;
     }
+    button {
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      background-color: #7AC142;
+      padding: 7px 15px 8px;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 15px;
+      cursor: pointer;
+      line-height: normal;
+      &:hover{
+        opacity: .9;
+      }
+    }
 
     border: 10px solid #E4F3D9;
     padding: 10px;

@@ -1,6 +1,8 @@
 import React from 'react';
 
 const CartItem = ({product, destroyCartItem}) => {
+
+  const destroyItem = () => destroyCartItem(product.id);
   return (
   <div className="cart-item">
       <div className="cart-item-image">
@@ -16,7 +18,7 @@ const CartItem = ({product, destroyCartItem}) => {
       <div className="cart-item-removal">
         <button
           className="remove-cart-item"
-          onClick={destroyCartItem(product.id)}>
+          onClick={destroyItem}>
           Remove
         </button>
       </div>

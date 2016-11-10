@@ -28,6 +28,7 @@ class ProductDetail extends React.Component {
     );
     const currentProduct = this.props.currentProduct;
     const sellerStore = currentProduct.seller_store;
+    const addCartItem = () => (this.props.addCartItem(currentProduct.id));
     const store = `\'s Store`;
     return(
       <div className="product-container">
@@ -49,7 +50,7 @@ class ProductDetail extends React.Component {
               <h3>{currentProduct.name}</h3>
               <p>Ships worldwide from {currentProduct.location}</p>
               <p>${currentProduct.price}</p>
-              <button onClick={this.props.addCartItem(currentProduct.id)}>Add to cart</button>
+              <button onClick={addCartItem}>Add to cart</button>
             </div>
 
             <aside className="seller-store">

@@ -1,0 +1,248 @@
+
+/* Global settings */
+$color-border: #eee;
+$color-label: #767676;
+$font-default: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
+
+
+/* Global "table" column settings */
+.cart-item-image { float: left; width: 26%; }
+.cart-item-details { float: left; width: 33%; }
+.cart-item-location { float: left; width: 20%; }
+.cart-item-removal { float: left; width: 9%; }
+.cart-item-price { float: left; width: 10%; text-align: right;}
+.right-edge {float: left; width: 2%; height: 19px;}
+
+
+
+/* This is used as the traditional .clearfix class */
+.group:before,
+.group:after {
+    content: '';
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1;
+}
+
+
+/* Apply clearfix in a few places */
+.shopping-cart, .column-labels, .cart-item, .totals-item {
+  @extend .group;
+}
+
+
+/* Apply dollar signs */
+.cart-item .cart-item-price:before, .totals-value:before {
+  content: '$';
+}
+
+
+/* Body/Header stuff */
+
+.shopping-cart {
+  margin-top: 0px;
+  h1 {
+    padding-left: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0px;
+  }
+
+  label {
+    color: $color-label;
+  }
+}
+
+
+/* Column headers */
+.column-labels {
+  label {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  .cart-item-image {
+    text-indent: -9999px;
+  }
+}
+
+
+/* Product entries */
+.cart-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $color-border;
+
+  .cart-item-image {
+    text-align: center;
+    img {
+      width: 100px;
+    }
+  }
+
+  .cart-item-details {
+    .cart-item-title {
+      margin-right: 20px;
+      font-family: $font-bold;
+    }
+    .cart-item-description {
+      margin: 5px 20px 5px 0;
+      line-height: 1.4em;
+    }
+  }
+
+  .cart-item-location {
+    input {
+      width: 40px;
+
+    }
+  }
+
+  .remove-cart-item {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+
+  .remove-cart-item:hover {
+    cursor: pointer;
+    background-color: #a44;
+  }
+}
+
+
+/* Totals section */
+.totals {
+  margin-right: 30px;
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+
+    label {
+      float: left;
+      clear: both;
+      width: 79%;
+      text-align: right;
+    }
+
+    .totals-value {
+      float: right;
+      width: 21%;
+      text-align: right;
+    }
+  }
+
+  .totals-item-total {
+    font-family: $font-bold;
+  }
+}
+
+.checkout {
+  margin-right: 30px;
+  float: right;
+  border: 0;
+  margin-top: 10px;
+  padding: 6px 15px;
+  background-color: #6b6;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.checkout:hover {
+  cursor: pointer;
+  background-color: #494;
+}
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+
+  .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid $color-border;
+  }
+
+  .column-labels {
+    display: none;
+  }
+
+  .cart-item-image {
+    float: right;
+    width: auto;
+    img {
+      margin: 0 0 10px 10px;
+    }
+  }
+
+  .cart-item-details {
+    float: none;
+    margin-bottom: 10px;
+    width: auto;
+  }
+
+  .cart-item-location {
+    width: auto;
+    input {
+      margin-left: 20px;
+    }
+  }
+
+  .cart-item-removal {
+    padding-left: 10px;
+    width: auto;
+  }
+
+  .cart-item-price {
+    margin-right: 30px;
+    float: right;
+    width: 70px;
+  }
+
+}
+
+
+/* Make more adjustments for phone */
+@media screen and (max-width: 350px) {
+
+  .cart-item-removal {
+    float: right;
+    clear: both;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .cart-item-price {
+    float: right;
+    clear: left;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .cart-item .cart-item-price:before {
+    content: 'Item Total: $';
+  }
+
+  .totals {
+    .totals-item {
+      label {
+        width: 60%;
+      }
+
+      .totals-value {
+        width: 40%;
+      }
+    }
+  }
+}

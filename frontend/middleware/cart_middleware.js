@@ -23,7 +23,7 @@ const CartMiddleware = ({getState, dispatch}) => next => action => {
       requestCart(receiveCartSuccess);
       return next(action);
     case ADD_CART_ITEM:
-      addCartItem(action.cartItem, receiveCartItemSuccess);
+      addCartItem(action.id, receiveCartItemSuccess);
       return next(action);
     case DESTROY_CART_ITEM:
       destroyCartItem(action.id, destroyCartItemSuccess);

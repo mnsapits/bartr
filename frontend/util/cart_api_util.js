@@ -18,6 +18,7 @@ export const addCartItem = (productId, success) => {
 export const destroyCartItem = (productId, success) => {
   $.ajax({
     method: 'DELETE',
-    url: `/api/carts/${productId}`
+    url: `/api/carts/${productId}`,
+    success
   });
 };

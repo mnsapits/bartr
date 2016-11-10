@@ -19,17 +19,17 @@ export const addCartItem = (id) => ({
   id
 });
 
-export const receiveCartItem = (cartItem) => ({
+export const receiveCartItem = (cart) => ({
   type: RECEIVE_CART_ITEM,
-  cartItem
+  cart
 });
 
-export const destroyCartItem = (productId) => ({
+export const destroyCartItem = (id) => ({
   type: DESTROY_CART_ITEM,
-  productId
+  id
 });
 
-export const removeCartItem = (cartItem) => ({
+export const removeCartItem = (cart) => ({
   type: REMOVE_CART_ITEM,
-  cartItem
+  cart
 });

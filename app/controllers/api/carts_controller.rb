@@ -1,7 +1,7 @@
 class Api::CartsController < ApplicationController
   def create
     # add item to cart
-    newcart = Cart.new(cart_params)
+    newcart = Cart.new(product_id: params[:productId])
     newcart.buyer_id = current_user.id
     if newcart.save
       @cart = current_user.cart_items
@@ -26,6 +26,6 @@ class Api::CartsController < ApplicationController
   end
 
   def cart_params
-    params.require(:cart).permit(:product_id)
+    params.require(:cart).permit(:productId)
   end
 end
