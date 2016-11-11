@@ -49,12 +49,21 @@ Products are stored in one table in the database that keeps track of
 
 #### All Products
 
-[image of all products](docs/wireframes/all-products.png)
+[all_products]: docs/wireframes/all-products.png "All Products"
+![alt_text][all_products]
 
 #### Product detail
 
-[image of product detail](docs/product-detail.png)
+[product_detail]: docs/wireframes/product-detail.png "Product Detail"
+![alt_text][product_detail]
 
 #### Search
 
-[image of product search](docs/wireframes/product-search.png)
+[search]: docs/wireframes/product-search.png "Search"
+![alt_text][search]
+
+### Cart
+In the backend, the "cart" is just a join table of cart_items that join a buyer, `buyer_id`, with a product, `product-id`. Within your cart you can see details about the products as well as a button to remove the product from the cart.
+
+[cart]: docs/wireframes/cart.png "Cart"
+![alt_text][cart]
