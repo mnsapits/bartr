@@ -27,10 +27,14 @@
   }
 
   .search-result-item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
     color: black;
     border-bottom: 1px solid whitesmoke;
-    width: 347px;
-    padding: 5px 5px 5px 10px;
+    max-width: 400px;
+    padding: 8px 8px 8px 10px;
     &:hover {
     background: #F5FFFA;
     }

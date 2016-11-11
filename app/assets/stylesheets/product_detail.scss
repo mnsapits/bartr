@@ -1,6 +1,6 @@
 .product-container {
   display: flex;
-  padding: 2% 5%;
+  padding: 2% 3%;
   justify-content: center;
 }
 
@@ -11,12 +11,13 @@
   flex-direction: row;
   justify-content: space-between;
   .col-left {
-    margin-right: 30px;
+    margin: 0 2%;
     flex: 1 0 350px;
     width: 50%;
   }
 
   .col-right {
+    margin: 0 2%;
     flex: 1 0 250px;
     width: 40%;
   }
