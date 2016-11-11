@@ -1,5 +1,5 @@
 # Bartr
-[Bartr live](www.bartrmarket.com)
+[Bartr live](http://www.bartrmarket.com)
 
 Bartr is a full-stack web application that takes inspiration from the E-commerce site Etsy. Bartr's frontend uses React.js with a Redux architectural framework, a PostgreSQL database, and a Ruby on Rails backend.
 
