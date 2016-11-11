@@ -1,6 +1,5 @@
 # Bartr
-[Bartr live][bartr]
-[bartr]: www.bartrmarket.com
+[Bartr live](www.bartrmarket.com)
 
 Bartr is a full-stack web application that takes inspiration from the E-commerce site Etsy. Bartr's frontend uses React.js with a Redux architectural framework, a PostgreSQL database, and a Ruby on Rails backend.
 
@@ -40,7 +39,8 @@ class User < ActiveRecord::Base
 ```
 On the frontend, the user can register or login via a Session Modal for a professional look.
 
-[image of session modal](docs/wireframes/sign-in.png)
+[modal]: docs/wireframes/sign-in.png
+![alt_text][modal]
 
 
 ### Products and Search
