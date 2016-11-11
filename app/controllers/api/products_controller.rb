@@ -3,7 +3,7 @@ class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
     if params[:query]
-      @products = @products.where("name ILIKE :query1 OR name ILIKE :query2", query1: "params[:query]%", query2: "% params[:query]%")
+      @products = @products.where("name ILIKE :query1 OR name ILIKE :query2", query1: "#{params[:query]}%", query2: "% #{params[:query]}%")
       render :search_results
     else
       render :index

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import Modal from 'react-modal';
+import SearchBarContainer from '../search/search_bar_container';
 import SessionFormContainer from './../session_form/session_form_container';
 import NewProductFormContainer from '../products/new_product_form_container';
 import CartIcon from '../cart/cart_icon';
@@ -19,13 +20,16 @@ const capitalizeFirstLetter = (string) => (
 
 const personalGreeting = (currentUser, logout, requestCart) => (
   <hgroup className="header-group">
-    <CartIcon requestCart={requestCart}/>
     <nav>
-      <h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
-        <ul className="greeting-dropdown">
-          <li className="add-product-button"><NewProductFormContainer /></li>
-          <li className="logout-button"><button className="session-button" onClick={logout}>Log Out</button></li>
-        </ul>
+      <ul>
+        <li><h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
+          <ul>
+            <li><NewProductFormContainer /></li>
+            <li><button className="session-button" onClick={logout}>Log Out</button></li>
+          </ul>
+        </li>
+        <li><CartIcon requestCart={requestCart}/></li>
+      </ul>
     </nav>
   </hgroup>
 );

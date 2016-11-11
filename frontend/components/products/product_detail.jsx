@@ -6,7 +6,6 @@ import includes from 'lodash/includes';
 
 
   const addToCartButton = (cart, currentUser, addCartItem, currentProduct) => {
-    debugger
     const itemIds = cart.map( item => item.id);
     if (includes(itemIds, currentProduct.id)){
       return <button

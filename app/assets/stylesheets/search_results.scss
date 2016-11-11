@@ -1,0 +1,37 @@
+.left-nav {
+  display: flex;
+  align-items: center;
+  .search-container {
+    margin: 5px 0px;
+    list-style-type: none;
+  }
+  .search-bar-input {
+    position: relative;
+    font-size: 16px;
+    padding-left: 10px;
+    height: 35px;
+    width: 350px;
+    border-radius: 5px;
+    border-width: none;
+  }
+
+  .search-results {
+    padding: 0px;
+    position: absolute;
+    background: white;
+    border: 1px solid whitesmoke;
+    list-style-type: none;
+    z-index: 2;
+    border-radius: 5px;
+  }
+
+  .search-result-item {
+    color: black;
+    border-bottom: 1px solid whitesmoke;
+    width: 350px;
+    padding: 5px;
+    &:hover {
+    background: #F5FFFA;
+    }
+  }
+}

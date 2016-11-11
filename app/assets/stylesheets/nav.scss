@@ -1,8 +1,54 @@
+header {
+  padding: 0px 90px;
+  height: 60px;
+  border-bottom: 1px solid lightgrey;
+  a {
+    text-decoration: none;
+  }
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .right-nav {
+    ul {
+      position: relative;
+      display: flex;
+      align-items: center;
+      li {
+        list-style: none;
+        display: inline;
+      }
+      li > ul {
+        display: none;
+        position: absolute;
+        margin: 0;
+        right: 26px;
+        top: 28px;
+        padding: 5px 5px 5px 5px;
+        text-align: left;
+        background: white;
+        border-radius: 5px;
+        border: 1px solid whitesmoke;
+        z-index: 2;
+      }
+      li:hover > ul {
+        display: block;
+        li {
+          display: block;
+          margin: 5px 0px;
+        }
+      }
+    }
+  }
+}
+
 .greeting-nav {
-  float: right;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   margin-top: 5px;
 }
 
@@ -16,7 +62,6 @@
 }
 
 .left-nav {
-  float: left;
   h1 {
     font-family: "Georgia";
     color: rgb(260,100,0);
@@ -25,7 +70,7 @@
   }
 }
 
-.right-nav {  
+.right-nav {
   a{
     list-style-type: none;
     padding: 5px 0px 5px 10px;
@@ -35,10 +80,11 @@
     }
   }
   .new-product-button {
+    cursor: pointer;
     font-size: 16px;
     border: none;
     background-color: transparent;
-    padding: 5px 0px 5px 10px;
+    padding: 5px;
     color: rgb(61,144,184);
     &:hover{
       text-decoration: underline;
@@ -46,14 +92,6 @@
   }
 }
 
-header {
-  padding: 10px 90px;
-  border-bottom: 1px solid lightgrey;
-  a {
-    text-decoration: none;
-  }
-  position: relative;
-}
 
 .header-group {
   h2 {
@@ -65,12 +103,11 @@ header {
 }
 
 .session-button {
-  font-family: "Arial";
   cursor: pointer;
   font-size: 16px;
   border: none;
   background-color: transparent;
-  padding: 5px 5px 5px 10px;
+  padding: 5px;
   color: rgb(61,144,184);
   &:hover{
     text-decoration: underline;
@@ -84,6 +121,7 @@ header {
 }
 
 .shop-cart {
+  padding-left: 20px;
   opacity: .7;
   width: 30px;
   &:hover{
