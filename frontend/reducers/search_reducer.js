@@ -1,4 +1,4 @@
-import { SEARCH_RESULTS } from '../actions/products_actions';
+import { SEARCH_RESULTS, CLEAR_SEARCH } from '../actions/products_actions';
 import merge from 'lodash/merge';
 
 const SearchReducer = (state = {}, action) => {
@@ -6,6 +6,8 @@ const SearchReducer = (state = {}, action) => {
   switch(action.type) {
     case SEARCH_RESULTS:
       return action.products;
+      case CLEAR_SEARCH:
+        return {};
     default:
       return state;
   }

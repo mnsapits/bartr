@@ -21,6 +21,7 @@ class SearchBar extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value}, () => {
         if (this.state.query !== "") {
+          this.props.clearSearch();
           this.props.searchProducts(this.state.query);
         }
       });

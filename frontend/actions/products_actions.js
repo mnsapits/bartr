@@ -7,9 +7,13 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 export const CLEAR_PRODUCT_ERRORS = 'CLEAR_PRODUCT_ERRORS';
 export const CLEAR_CURRENT_PRODUCT = 'CLEAR_CURRENT_PRODUCT';
-
 export const SEARCH_PRODUCTS = 'SEARCH_PRODUCTS';
 export const SEARCH_RESULTS = 'SEARCH_RESULTS';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
+
+export const clearSearch = () => ({
+  type: CLEAR_SEARCH
+});
 
 export const searchProducts = (query) => ({
   type: SEARCH_PRODUCTS,
