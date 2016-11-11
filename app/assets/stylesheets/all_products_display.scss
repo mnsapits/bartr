@@ -26,11 +26,10 @@
   background: white;
   border-radius: 3px;
   position:relative;
-  width:240px;
+  width:200px;
   display:inline-block;
   margin: 3px;
   .inner-wrap {
-    padding:15px;
   }
   a {
     text-decoration:none;
@@ -53,8 +52,8 @@
     transform:translate(-50%, -40%);
   }
   .product-img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display:block;
     margin:0 auto;
   }
@@ -72,6 +71,7 @@
   }
 }
 .product-meta {
+  border-top: 1px solid grey;
   text-align:center;
   padding-top:10px;
   position:relative;
@@ -79,7 +79,10 @@
 .product-title {
   padding: 5px;
   margin: 0;
-  font-weight:700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight:600;
   font-size:15px;
   color:#1a1a1a;
 }
