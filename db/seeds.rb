@@ -1,19 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-guest = User.create({username: "Guest", password: 123456, avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"})
-
-micah = User.create({username: "Micah", password: 123456, avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"})
-
-product1 = Product.create({seller_id: 1, name: 'Kombucha Kit', details: "Tasty kombucha", image_url: 'http://res.cloudinary.com/dmdj7eggw/image/upload/v1478398346/products/51Twrh-2zRL.jpg', price: 3, location: 'San Francisco'})
-
-product2 = Product.create({seller_id: 1, name: 'Beer Kit', details: "Tasty beer", image_url: 'http://cdn.blessthisstuff.com/imagens/stuff/brooklyn-brew-beer-making-kit.jpg', price: 5, location: 'San Francisco'})
-
-product3 = Product.create({seller_id: 2, name: 'Cheese Kit', details: "Tasty cheese", image_url: 'https://cdn.prezzybox.com/Images/12018.jpg', price: 6, location: 'San Francisco'})
-
-product4 = Product.create({seller_id: 2, name: 'Water Kefir Kit', details: "Tasty Kefir", image_url: 'http://cdn.culturesforhealth.com/media/catalog/product/cache/1/thumbnail/960x/17f82f742ffe127f42dca9de82fb58b1/c/f/cfh_waterkefirgrains_starterculture_highres_front.jpg', price: 7, location: 'San Francisco'})
+User.create!([
+  {username: "Micah", password_digest: "$2a$10$ZNKMLhPrQY962mwvQXb75OmxNruRA0NEbdprB3wIb.nSPojKersPi", session_token: "TnYCCXp4gX5xs6aNQjK5NQ==", avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"},
+  {username: "Lauren", password_digest: "$2a$10$5paU2hUijD1NqwEtaNZ1mesmsl.h.PwoWyP.gV/vJjQySojqLHhvG", session_token: "Mv/eLlG7Z02QJOYMcIQYxA==", avatar: nil},
+  {username: "Jamie", password_digest: "$2a$10$Xv0NpVNJKt/qTWnOA8cXBOhGt5RMG6GbKxN9Q2eMdZyPcMoFvoXPq", session_token: "9YVfxC5jJ5eo5oKeN6GG5Q==", avatar: nil},
+  {username: "Josh", password_digest: "$2a$10$b4BRDPY7d71hoJMWvTeLfugZshcSIXo2V0kC9w6pxugjcr.n1.8XK", session_token: "L9eGT66GSLLAZFPVj2gvAQ==", avatar: nil},
+  {username: "Danny", password_digest: "$2a$10$kAS7sdPVCcvfOAxt8U6d8..3ellZdvkzeEERcmMlTInuT4o8Nh.8O", session_token: "s9fMBMguWZ8LK5uKBbmAEg==", avatar: nil},
+  {username: "Guest", password_digest: "$2a$10$YVpebbbJsWUutD1rM7ieyOkuHrSFxzTtmUSs4LDnmtNQNgwmajL3K", session_token: "q7hU6cMTBdTupJRaG3ViWA==", avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"},
+  {username: "Gage", password_digest: "$2a$10$1lAYPCxM/PL5X7Op6O3bWOaFGRVfbJWKB3JTS6SXUNe9WVZ/2DayW", session_token: "8WHKuRZ08iTmbRKleX6TqQ==", avatar: nil},
+  {username: "Katie", password_digest: "$2a$10$F7AiKBSAjhmN8T6.uDHjM.Lo1CtKCUXFemaTku1rDV2YYL7QktRZG", session_token: "2H+TIln2BUeghNYHMKhqbg==", avatar: nil},
+  {username: "Aaron", password_digest: "$2a$10$gY.puVBYDdBGJKR3TqhZDe5GGUuYHYgjFe/U0DaA6/9EsXEoiriqe", session_token: "tmBvWmTA63x2vE8deEWKLQ==", avatar: nil}
+])
+Product.create!([
+  {seller_id: 1, name: "Kombucha Kit", details: "Tasty kombucha", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478398346/products/51Twrh-2zRL.jpg", price: 3.0, location: "San Francisco"},
+  {seller_id: 2, name: "Water Kefir Kit", details: "Tasty Kefir", image_url: "http://cdn.culturesforhealth.com/media/catalog/product/cache/1/thumbnail/960x/17f82f742ffe127f42dca9de82fb58b1/c/f/cfh_waterkefirgrains_starterculture_highres_front.jpg", price: 7.0, location: "San Francisco"},
+  {seller_id: 9, name: "Mozzarella & Ricotta DIY Cheese Kit- 8 batches (cow's milk)", details: "Make your own succulent Mozzarella and creamy Ricotta with an Urban Cheesecraft Kit!", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478845768/il_570xN.676345969_t9cz_yewfxx.jpg", price: 25.0, location: "Los Angeles"},
+  {seller_id: 9, name: "Crumbly Goat Cheese and Creamy Chevre- D.I.Y. Cheese Kit- 8 batches (goat milk)", details: "Make simple goat cheese with an Urban Cheesecraft Kit! It only takes one hour, really.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478845968/il_570xN.676363009_8riw_xcikxr.jpg", price: 29.0, location: "Los Angeles"},
+  {seller_id: 9, name: "Burrata & Mascarpone DIY Cheese Kit- 8 batches (cow milk)", details: "\nMake your own buttery Burrata and melt in your mouth Mascarpone with an Urban Cheesecraft Kit! ", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478846117/il_570xN.676356555_5291_dfcard.jpg", price: 25.0, location: "Los Angeles"},
+  {seller_id: 9, name: "Feta, Greek Yogurt & Yogurt Cream Cheese DIY Kit- 8 and 24 batches (cow milk and goat milk)", details: "Make your own tangy Feta, Greek Yogurt and Yogurt Cream Cheese with an Urban Cheesecraft Kit!", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478846523/il_570xN.676360533_sj0k_vzw4xt.jpg", price: 29.0, location: "Los Angeles"},
+  {seller_id: 9, name: "Paneer and Queso Blanco D.I.Y. Cheese Kit, Easiest Cheeses to Make- 8 batches", details: "If you're new to making cheese or have not had luck with previous attempts, this is the cheese kit for you! It's also great for kids. You WILL have success! ", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478846641/il_570xN.676239426_m9hz_zzjtdb.jpg", price: 25.0, location: "Los Angeles"},
+  {seller_id: 1, name: "San Francisco panorama Golden Gate bridge antique art photo California", details: "This is an original vintage photo. Not a modern reproduction. Taken by the cousin of Abraham Lincoln's neighbor's auto mechanic.\n", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478847015/il_570xN.803220675_h1no_ajgm9g.jpg", price: 1000.0, location: "San Francisco"},
+  {seller_id: 1, name: "Narcos Handcuff Knot Sweatshirt", details: "This sweatshirt has been known to bring great luck to those who wear it!", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/c_scale,h_314,w_487/v1478847510/il_570xN.1079379461_1juu_qotsvc.jpg", price: 35.0, location: "San Francisco"},
+  {seller_id: 1, name: "10 Gorgeous ROSETTE Succulents", details: "These wedding favor succulents will be the hit of your party that your guests will adore. You will receive succulent species including: Aeoniums, Echeverias, Semperviviums, and Graptoverias etc.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478847773/il_570xN.474249357_51fg_yojsc3.jpg", price: 30.0, location: "San Francisco"},
+  {seller_id: 1, name: "Canvas Wall Art - Freshness Of Cold — Landscape Oil Painting On Canvas", details: "This painting was made by a famous monk from Thailand on his first visit to America.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478848465/il_570xN.1013273490_regc_czaqrd.jpg", price: 140.0, location: "San Francisco"},
+  {seller_id: 8, name: "Lucky Sweater", details: "This Cozy Vintage Sweater is well-knit and is in excellent condition! It was blessed by a shaman in Peru and has brought me great fortune. Now it is time to share the love.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478848734/il_570xN.1059652670_izj7_h8x7cr.jpg", price: 75.0, location: "Boston"},
+  {seller_id: 8, name: "Used Skateboard", details: "This is a great skateboard. You might have seen this board on the cover of the last issue of Thrasher Magazine. It still has a lot of good years left in it.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478849011/e62209a7883c2bfccb9021e17956c77c_dr5342.jpg", price: 25.0, location: "Boston"},
+  {seller_id: 8, name: "Rubber Chicken", details: "This is the best quality rubber chicken money can buy. Not for human consumption. ", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478849209/deluxe_rubber_chicken_4_grande_oveldv.jpg", price: 12.0, location: "Boston"},
+  {seller_id: 8, name: "Flying Elephant", details: "This is a limited edition flying elephant toy. This toy was hand-made by a whole village in Cyprus and took 3 years to complete.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478849373/A4-Soft_Plush_Flying_Elephant_Toy_with_Stuff_Goggles_Detailing_BluePink_Color_3_sonaa3.jpg", price: 975.0, location: "Boston"},
+  {seller_id: 8, name: "Collectible Soccer Ball", details: "This is an extremely rare soccer ball. This ball was used by the cousin of Lionel Messi's childhood piano teacher. ", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478849593/pDSP1-23518813v750_twnccf.jpg", price: 685.0, location: "Boston"},
+  {seller_id: 4, name: "Tiger eye Leather anklets", details: "Anklets for men and women\n\nHandmade anklets made with 4mm tiger eye and 4mm turquoise with dark brown real leather and with button for closure.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478850546/il_570xN.848355514_g8pl_vkham7.jpg", price: 9.0, location: "Thailand"},
+  {seller_id: 4, name: "Stone Anklet", details: "Handmade anklets made with 4mm tiger eye stone with real leather and with button for closure.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478850660/il_570xN.845660132_8akj_xiuhbi.jpg", price: 9.0, location: "Thailand"},
+  {seller_id: 4, name: "Jasper Anklet", details: "Handmade anklets made with 4mm green jasper stone with 4mm round silver and with elastic.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478850735/il_570xN.1014593115_55gc_jqe7qg.jpg", price: 9.0, location: "Thailand"},
+  {seller_id: 4, name: "Jade Anklet", details: "Handmade anklets made with 4mm jade stone with 4mm silver and with elastic.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478850846/il_570xN.1015190465_max5_dzmvmd.jpg", price: 10.0, location: "Thailand"},
+  {seller_id: 4, name: "Howlite Leather Anklet", details: "Handmade anklets made with 4mm Howlite stone with real leather and with button for closure.", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478850946/il_570xN.847461140_qi95_puaoco.jpg", price: 7.0, location: "Thailand"}
+])
