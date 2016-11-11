@@ -19,13 +19,6 @@ const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
-      replace('/login');
-    }
-  };
-
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-    if (currentUser) {
       replace('/');
     }
   };
@@ -50,7 +43,7 @@ const Root = ({ store }) => {
           <Route path="products" component={ProductsIndexContainer} onEnter={requestAllProductsOnEnter}/>
           <Route path="product/:id" component={ProductDetailContainer} onEnter={requestProductDetailOnEnter}/>
           <Route path="users/:id" component={UserStoreContainer} onEnter={requestUserStoreOnEnter}/>
-          <Route path="cart" component={CartContainer} />
+          <Route path="cart" component={CartContainer} onEnter={_ensureLoggedIn}/>
         </Route>
       </Router>
     </Provider>

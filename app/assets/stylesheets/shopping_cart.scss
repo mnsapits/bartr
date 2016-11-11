@@ -41,6 +41,19 @@ $font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
   content: '$';
 }
 
+.cart-empty{
+  background: whitesmoke;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  display: block;
+  text-align: center;
+  margin: 30px auto ;
+  line-height: 100px;
+  width: 75%;
+  font-family: "Georgia";
+  ;
+}
+
 
 /* Body/Header stuff */
 

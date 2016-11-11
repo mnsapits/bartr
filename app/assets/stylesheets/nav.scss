@@ -94,6 +94,9 @@ header {
 
 
 .header-group {
+  ul {
+    padding-left: 20px;
+  }
   h2 {
     color: rgb(61,144,184);
     margin: 0;
@@ -130,6 +133,9 @@ header {
     background: #6DAD23;
     padding: 0px 4px;
     border-radius: 5px;
+  }
+  a {
+    padding: 0px;
   }
 }
 

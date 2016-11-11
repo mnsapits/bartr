@@ -11,9 +11,10 @@ class Cart extends React.Component {
 
   let subtotal = (this.props.cart.map(product => product.price).reduce((a, b) => a + b, 0)).toFixed(2);
   let tax = (subtotal * 0.05).toFixed(2);
+  let shipping = (subtotal < 50 ? 10 : 0).toFixed(2);
   let grandtotal = (Number(subtotal) + Number(tax) + 15).toFixed(2);
   if(this.props.cart.length === 0) {
-    return (<h3>Cart Empty</h3>);
+    return (<h3 className="cart-empty">Cart Empty</h3>);
   } else {
     return (
       <div className="shopping-cart">
@@ -42,7 +43,7 @@ class Cart extends React.Component {
           </div>
           <div className="totals-item">
             <label>Shipping</label>
-            <div className="totals-value" id="cart-shipping">15.00</div>
+            <div className="totals-value" id="cart-shipping">{shipping}</div>
           </div>
           <div className="totals-item totals-item-total">
             <label>Grand Total</label>

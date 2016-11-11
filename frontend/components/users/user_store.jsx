@@ -23,7 +23,7 @@ class UserStore extends React.Component {
 
   return (
     <div className="seller-store-container">
-      <h1>{currentStore.username}</h1>
+      <h1 className="store-title">{currentStore.username}{"'s Store"}</h1>
       <div className="seller-store-items-index">
         <div>
           {storeProducts}

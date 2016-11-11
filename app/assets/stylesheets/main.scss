@@ -5,6 +5,19 @@ html,body {
   font-family: 'Karla', sans-serif;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-weight: 200;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-weight: 200;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-weight: 200;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-weight: 200;
+}
+
 .splash-page{
   background-image: url('http://res.cloudinary.com/dmdj7eggw/image/upload/v1478649067/Jacksonville-Barter-Exchange-Trading_pe6irf.jpg');
   width: 100%;
@@ -12,8 +25,10 @@ html,body {
   background-repeat: no-repeat;
   height: calc(100vh - 61px);
   p {
+    font-family: "Georgia";
+    color: #4d0000;
     font-size: 22px;
-    padding-top: 40px;
+    padding-top: 30px;
     left: 35%;
     position: absolute;
   }
