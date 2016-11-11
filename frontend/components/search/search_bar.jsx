@@ -19,7 +19,11 @@ class SearchBar extends React.Component {
 
   update(field) {
     return e => this.setState({
-      [field]: e.currentTarget.value}, () => this.props.searchProducts(this.state.query));
+      [field]: e.currentTarget.value}, () => {
+        if (this.state.query !== "") {
+          this.props.searchProducts(this.state.query);
+        }
+      });
   }
 
 

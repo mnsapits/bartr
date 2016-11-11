@@ -10,6 +10,7 @@ class CartIcon extends React.Component {
     this.props.requestCart();
   }
 
+
   render() {
   return (
     <Link to ="/cart">

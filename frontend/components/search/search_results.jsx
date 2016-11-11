@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const SearchResults = ({shown, results}) => {
+  console.log(results);
   if (shown) {
-    let names = Object.keys(results).map(id => <Link to={"/product/"+ id}><li className="search-result-item" key={id}>{results[id].name}</li></Link>);
+    let names = Object.keys(results).map(id => <Link key={id} to={"/product/"+ id}><li className="search-result-item" >{results[id].name}</li></Link>);
     return (
       <ul className="search-results">{names}</ul>
     );
   } else {
-    return null;
+  return  null;
   }
 };
 

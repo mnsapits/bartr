@@ -18,7 +18,7 @@ const capitalizeFirstLetter = (string) => (
   string.charAt(0).toUpperCase() + string.slice(1)
 );
 
-const personalGreeting = (currentUser, logout, requestCart) => (
+const personalGreeting = (currentUser, logout, requestCart, cart) => (
   <hgroup className="header-group">
     <nav>
       <ul>
@@ -28,7 +28,7 @@ const personalGreeting = (currentUser, logout, requestCart) => (
             <li><button className="session-button" onClick={logout}>Log Out</button></li>
           </ul>
         </li>
-        <li><CartIcon requestCart={requestCart}/></li>
+        <li><CartIcon requestCart={requestCart} cart={cart}/></li>
       </ul>
     </nav>
   </hgroup>
@@ -97,11 +97,11 @@ class Greeting extends React.Component {
 
 
   render() {
-    const {currentUser, logout, requestCart} = this.props;
+    const {currentUser, logout, requestCart, cart} = this.props;
     return (
     <div className="greeting-nav">
         <button className="session-button" onClick={this.pushToProducts('/products').bind(this)}>All Products</button>
-      {currentUser ? personalGreeting(currentUser, logout, requestCart) : sessionLinks(this.guestLogIn, this.onLoginClick, this.onSignUpClick)}
+      {currentUser ? personalGreeting(currentUser, logout, requestCart, cart) : sessionLinks(this.guestLogIn, this.onLoginClick, this.onSignUpClick)}
       <Modal
         className="session-modal"
         isOpen={this.state.modalShown}

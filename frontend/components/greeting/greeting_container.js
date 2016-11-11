@@ -5,7 +5,8 @@ import Greeting from './greeting';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  errors: state.session.errors
+  errors: state.session.errors,
+  cart: state.cart
 });
 
 const mapDispatchToProps = dispatch => ({
