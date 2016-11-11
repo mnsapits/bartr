@@ -1,3 +1,6 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 html,body {
   height: 100%;
   margin: 0;
@@ -19,17 +22,20 @@ html,body {
 }
 
 .splash-page{
+  display: flex;
+  justify-content: center;
   background-image: url('http://res.cloudinary.com/dmdj7eggw/image/upload/v1478649067/Jacksonville-Barter-Exchange-Trading_pe6irf.jpg');
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   height: calc(100vh - 61px);
   p {
+    background-color: #F5F5DC;
     font-family: "Georgia";
     color: #4d0000;
     font-size: 22px;
-    padding-top: 30px;
-    left: 35%;
+    border-radius: 15px;
+    padding: 20px;
     position: absolute;
   }
 }

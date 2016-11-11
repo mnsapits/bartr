@@ -22,7 +22,8 @@ const personalGreeting = (currentUser, logout, requestCart, cart) => (
   <hgroup className="header-group">
     <nav>
       <ul>
-        <li><h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}</h2>
+        <li><h2 className="header-name">Hi, {capitalizeFirstLetter(currentUser.username)}<i className="fa fa-caret-down" aria-hidden="true"></i></h2>
+
           <ul>
             <li><NewProductFormContainer /></li>
             <li><button className="session-button" onClick={logout}>Log Out</button></li>
