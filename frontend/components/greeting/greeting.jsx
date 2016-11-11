@@ -8,7 +8,7 @@ import CartIcon from '../cart/cart_icon';
 
 const sessionLinks = (guestLogIn, onLoginClick, onSignUpClick) => (
   <nav className="login-signup">
-    <button className="session-button" onClick={guestLogIn}>Guest Log In</button>
+    <button className="session-button" onClick={guestLogIn}>Guest In</button>
     <button className="session-button" onClick={onLoginClick}>Sign In</button>
     <button className="session-button" onClick={onSignUpClick}>Sign Up</button>
   </nav>

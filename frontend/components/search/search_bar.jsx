@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       query: "",
       resultsShown: false
     };
+    this.exitSearchBar = this.exitSearchBar.bind(this);
   }
 
   show() {
@@ -26,6 +27,12 @@ class SearchBar extends React.Component {
         }
       });
   }
+  exitSearchBar() {
+    setTimeout(() => {
+      this.setState({query: ""});
+      this.props.clearSearch();
+    }, 100);
+  }
 
 
   render () {
@@ -35,6 +42,8 @@ class SearchBar extends React.Component {
           className="search-bar-input"
           type="text"
           placeholder="Search for items"
+          onBlur={this.exitSearchBar}
+          value={this.state.query}
           onChange={this.update("query")}>
         </input></li>
           <SearchResults
