@@ -28,7 +28,7 @@ const personalGreeting = (currentUser, logout, requestCart, cart) => (
             <li><button className="session-button" onClick={logout}>Log Out</button></li>
           </ul>
         </li>
-        <li><CartIcon requestCart={requestCart} cart={cart}/></li>
+        <li className="cart-container"><CartIcon requestCart={requestCart} cart={cart}/></li>
       </ul>
     </nav>
   </hgroup>

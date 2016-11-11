@@ -120,6 +120,19 @@ header {
   float: right;
 }
 
+.cart-container {
+  position: relative;
+  .cart-count{
+    right: -10px;
+    top: -6px;
+    color: white;
+    position: absolute;
+    background: #6DAD23;
+    padding: 0px 4px;
+    border-radius: 5px;
+  }
+}
+
 .shop-cart {
   padding-left: 20px;
   opacity: .7;
