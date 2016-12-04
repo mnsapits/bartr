@@ -1,14 +1,15 @@
 User.create!([
-  {username: "Micah", password_digest: "$2a$10$ZNKMLhPrQY962mwvQXb75OmxNruRA0NEbdprB3wIb.nSPojKersPi", session_token: "TnYCCXp4gX5xs6aNQjK5NQ==", avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"},
+  {username: "Guest", password_digest: "$2a$10$YVpebbbJsWUutD1rM7ieyOkuHrSFxzTtmUSs4LDnmtNQNgwmajL3K", session_token: "q7hU6cMTBdTupJRaG3ViWA==", avatar: nil},
+  {username: "Micah", password_digest: "$2a$10$ZNKMLhPrQY962mwvQXb75OmxNruRA0NEbdprB3wIb.nSPojKersPi", session_token: "TnYCCXp4gX5xs6aNQjK5NQ==", avatar: nil},
   {username: "Lauren", password_digest: "$2a$10$5paU2hUijD1NqwEtaNZ1mesmsl.h.PwoWyP.gV/vJjQySojqLHhvG", session_token: "Mv/eLlG7Z02QJOYMcIQYxA==", avatar: nil},
-  {username: "Jamie", password_digest: "$2a$10$Xv0NpVNJKt/qTWnOA8cXBOhGt5RMG6GbKxN9Q2eMdZyPcMoFvoXPq", session_token: "9YVfxC5jJ5eo5oKeN6GG5Q==", avatar: nil},
-  {username: "Josh", password_digest: "$2a$10$b4BRDPY7d71hoJMWvTeLfugZshcSIXo2V0kC9w6pxugjcr.n1.8XK", session_token: "L9eGT66GSLLAZFPVj2gvAQ==", avatar: nil},
-  {username: "Danny", password_digest: "$2a$10$kAS7sdPVCcvfOAxt8U6d8..3ellZdvkzeEERcmMlTInuT4o8Nh.8O", session_token: "s9fMBMguWZ8LK5uKBbmAEg==", avatar: nil},
-  {username: "Guest", password_digest: "$2a$10$YVpebbbJsWUutD1rM7ieyOkuHrSFxzTtmUSs4LDnmtNQNgwmajL3K", session_token: "q7hU6cMTBdTupJRaG3ViWA==", avatar: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478488901/app/default_avatar_400x400.png"},
-  {username: "Gage", password_digest: "$2a$10$1lAYPCxM/PL5X7Op6O3bWOaFGRVfbJWKB3JTS6SXUNe9WVZ/2DayW", session_token: "8WHKuRZ08iTmbRKleX6TqQ==", avatar: nil},
   {username: "Katie", password_digest: "$2a$10$F7AiKBSAjhmN8T6.uDHjM.Lo1CtKCUXFemaTku1rDV2YYL7QktRZG", session_token: "2H+TIln2BUeghNYHMKhqbg==", avatar: nil},
-  {username: "Aaron", password_digest: "$2a$10$gY.puVBYDdBGJKR3TqhZDe5GGUuYHYgjFe/U0DaA6/9EsXEoiriqe", session_token: "tmBvWmTA63x2vE8deEWKLQ==", avatar: nil}
+  {username: "Jamie", password_digest: "$2a$10$Xv0NpVNJKt/qTWnOA8cXBOhGt5RMG6GbKxN9Q2eMdZyPcMoFvoXPq", session_token: "9YVfxC5jJ5eo5oKeN6GG5Q==", avatar: nil},
+  {username: "Aaron", password_digest: "$2a$10$gY.puVBYDdBGJKR3TqhZDe5GGUuYHYgjFe/U0DaA6/9EsXEoiriqe", session_token: "tmBvWmTA63x2vE8deEWKLQ==", avatar: nil},
+  {username: "Josh", password_digest: "$2a$10$b4BRDPY7d71hoJMWvTeLfugZshcSIXo2V0kC9w6pxugjcr.n1.8XK", session_token: "L9eGT66GSLLAZFPVj2gvAQ==", avatar: nil},
+  {username: "Gage", password_digest: "$2a$10$1lAYPCxM/PL5X7Op6O3bWOaFGRVfbJWKB3JTS6SXUNe9WVZ/2DayW", session_token: "8WHKuRZ08iTmbRKleX6TqQ==", avatar: nil},
+  {username: "Danny", password_digest: "$2a$10$kAS7sdPVCcvfOAxt8U6d8..3ellZdvkzeEERcmMlTInuT4o8Nh.8O", session_token: "s9fMBMguWZ8LK5uKBbmAEg==", avatar: nil}
 ])
+
 Product.create!([
   {seller_id: 1, name: "Kombucha Kit", details: "Tasty kombucha", image_url: "http://res.cloudinary.com/dmdj7eggw/image/upload/v1478398346/products/51Twrh-2zRL.jpg", price: 3.0, location: "San Francisco"},
   {seller_id: 2, name: "Water Kefir Kit", details: "Tasty Kefir", image_url: "http://cdn.culturesforhealth.com/media/catalog/product/cache/1/thumbnail/960x/17f82f742ffe127f42dca9de82fb58b1/c/f/cfh_waterkefirgrains_starterculture_highres_front.jpg", price: 7.0, location: "San Francisco"},
