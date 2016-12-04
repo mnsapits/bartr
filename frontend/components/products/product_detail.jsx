@@ -29,19 +29,22 @@ class ProductDetail extends React.Component {
 
   renderStore() {
     const sellerStore = this.props.currentProduct.seller_store;
-
-    return (
-      sellerStore.map(product => {
-        return <StoreItemDetail key={product.id} product={product} />;
-      })
-    );
+    if (sellerStore) {
+      return (
+        sellerStore.map(product => {
+          return <StoreItemDetail key={product.id} product={product} />;
+        })
+      );
+    }
   }
 
 
   render() {
-    const capitalizeFirstLetter = (string) => (
-      string.charAt(0).toUpperCase() + string.slice(1)
-    );
+    const capitalizeFirstLetter = (string) => {
+      if (string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+    };
     const currentProduct = this.props.currentProduct;
     const sellerStore = currentProduct.seller_store;
     const cart = this.props.cart;
