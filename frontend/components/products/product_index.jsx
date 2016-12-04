@@ -1,4 +1,5 @@
 import React from 'react';
+import shuffle from 'lodash/shuffle';
 import ProductIndexItem from './product_index_item';
 
 const ProductIndex = ({products}) => {
@@ -7,7 +8,7 @@ const ProductIndex = ({products}) => {
   });
   return (
     <div className="product-wrapper">
-      {productIndexItems}
+      {shuffle(productIndexItems)}
     </div>
   );
 };
