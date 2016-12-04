@@ -2,17 +2,22 @@ export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const REQUEST_PRODUCT = 'REQUEST_PRODUCT';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
-export const RECEIVE_NEW_PRODUCT = 'RECEIVE_PRODUCT';
+export const RECEIVE_NEW_PRODUCT = 'RECEIVE_NEW_PRODUCT';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const RECEIVE_PRODUCT_ERRORS = 'RECEIVE_PRODUCT_ERRORS';
 export const CLEAR_PRODUCT_ERRORS = 'CLEAR_PRODUCT_ERRORS';
 export const CLEAR_CURRENT_PRODUCT = 'CLEAR_CURRENT_PRODUCT';
+export const CLEAR_PRODUCTS = 'CLEAR_PRODUCTS';
 export const SEARCH_PRODUCTS = 'SEARCH_PRODUCTS';
 export const SEARCH_RESULTS = 'SEARCH_RESULTS';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
 export const clearSearch = () => ({
   type: CLEAR_SEARCH
+});
+
+export const clearProducts = () => ({
+  type: CLEAR_PRODUCTS
 });
 
 export const searchProducts = (query) => ({

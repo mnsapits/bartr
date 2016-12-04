@@ -1,7 +1,16 @@
-import { RECEIVE_PRODUCTS, RECEIVE_NEW_PRODUCT } from '../actions/products_actions';
+import {
+  RECEIVE_PRODUCTS,
+  RECEIVE_NEW_PRODUCT,
+  CLEAR_PRODUCTS
+} from '../actions/products_actions';
+
 import merge from 'lodash/merge';
 
-const ProductsReducer = (state = {}, action) => {
+const defaultProducts = {};
+
+const ProductsReducer = (state = defaultProducts, action) => {
+  console.log(action.type);
+  if (window.store) { console.log(window.store.getState().products);}
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PRODUCTS:
@@ -10,6 +19,8 @@ const ProductsReducer = (state = {}, action) => {
       let newState = merge({}, state);
       let newProduct = action.product;
       return merge(newState, {[newProduct.id]: newProduct});
+    case CLEAR_PRODUCTS:
+      return {};
     default:
       return state;
   }

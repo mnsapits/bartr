@@ -2,15 +2,29 @@ import React from 'react';
 import shuffle from 'lodash/shuffle';
 import ProductIndexItem from './product_index_item';
 
-const ProductIndex = ({products}) => {
-  let productIndexItems = Object.keys(products).map((id) => {
-    return <ProductIndexItem key={products[id].name + id} product={products[id]} />;
-  });
-  return (
+
+class ProductIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillUnmount() {
+    this.props.clearProducts();
+  }
+
+  render() {
+    const productIndexItems = Object.keys(this.props.products).map((id) => {
+      return <ProductIndexItem
+                key={this.props.products[id].name + id}
+                product={this.props.products[id]}
+                />;
+    });
+
+    return (
     <div className="product-wrapper">
       {shuffle(productIndexItems)}
     </div>
-  );
-};
+  );}
+}
 
 export default ProductIndex;
