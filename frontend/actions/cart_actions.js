@@ -4,6 +4,7 @@ export const RECEIVE_CART_ITEM = 'RECEIVE_CART_ITEM';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 export const DESTROY_CART_ITEM = 'DESTROY_CART_ITEM';
 export const RECEIVE_CART = 'RECEIVE_CART';
+export const CLEAR_CART = 'CLEAR_CART';
 
 export const requestCart = () => ({
   type: REQUEST_CART
@@ -32,4 +33,8 @@ export const destroyCartItem = (id) => ({
 export const removeCartItem = (cart) => ({
   type: REMOVE_CART_ITEM,
   cart
+});
+
+export const clearCart = () => ({
+  type: CLEAR_CART
 });

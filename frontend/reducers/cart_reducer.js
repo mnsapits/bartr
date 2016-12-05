@@ -1,4 +1,10 @@
-import { RECEIVE_CART_ITEM, REMOVE_CART_ITEM, RECEIVE_CART} from '../actions/cart_actions';
+import {
+  RECEIVE_CART_ITEM,
+  REMOVE_CART_ITEM,
+  RECEIVE_CART,
+  CLEAR_CART
+} from '../actions/cart_actions';
+
 import merge from 'lodash/merge';
 
 const _defaultCart = [];
@@ -11,6 +17,8 @@ const CartReducer = (state = _defaultCart, action) => {
     case REMOVE_CART_ITEM:
     case RECEIVE_CART_ITEM:
       return action.cart;
+    case CLEAR_CART:
+      return _defaultCart;
     // case RECEIVE_CART_ITEM:
     //   newState = merge({}, state);
     //   let newCartItem = action.cartItem;
