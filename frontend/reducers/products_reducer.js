@@ -9,8 +9,6 @@ import merge from 'lodash/merge';
 const defaultProducts = {};
 
 const ProductsReducer = (state = defaultProducts, action) => {
-  console.log(action.type);
-  if (window.store) { console.log(window.store.getState().products);}
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PRODUCTS:
