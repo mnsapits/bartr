@@ -6,6 +6,7 @@ html,body {
   margin: 0;
   background: white;
   font-family: 'Karla', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
